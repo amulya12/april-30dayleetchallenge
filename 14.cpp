@@ -4,13 +4,13 @@ class Solution {
     int len = (int)s.length();
     string ans{s};
     for (auto pp : shift) {
-      shift_once(ans, len, pp);
+      shift(ans, len, pp);
     }
     return ans;
   }
 
  private:
-  void shift_once(string& s, const int& len, vector<int> pp) {
+  void shift(string& s, const int& len, vector<int> pp) {
     if (pp[0] == 1) {
       s = s.substr(len - pp[1], pp[1]) + s.substr(0, len - pp[1]);
     } else {
